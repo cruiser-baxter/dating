@@ -1,0 +1,13 @@
+{
+  "name": "cruiser-baxter/dating",
+  "authors": [
+    {
+      "name": "Cruiser Baxter",
+      "email": "cbaxter4@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  },
+  "description": "default composer.json for dating website assignment"
+}
