@@ -1,9 +1,13 @@
 .text-indent {
-    text-indent: 2em;
+    margin-left: 2em;
+    margin-right: 42em;
 }
 .text-italic {
     font-style: italic;
 }
 .align-right {
     float: right;
+}
+.round-corners {
+    border-radius: 25px;
 }
