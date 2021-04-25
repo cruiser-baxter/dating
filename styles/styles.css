@@ -4,3 +4,6 @@
 .text-italic {
     font-style: italic;
 }
+.align-right {
+    float: right;
+}
