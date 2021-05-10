@@ -11,3 +11,23 @@
 .round-corners {
     border-radius: 25px;
 }
+input {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.bold-font {
+    font-weight: bold;
+}
+
+.right-align {
+    float: right;
+}
+.bg-lightgray {
+    background-color: lightgray;
+}
+.w-70 {
+    max-width: 70%;
+}
+.rounded-sm {
+    border-radius: 10px;
+}

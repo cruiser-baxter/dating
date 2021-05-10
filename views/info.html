@@ -6,23 +6,54 @@ Description: info page view for dating website.
 -->
 
 <include href="views/header.html"/>
-<main class="container">
+<main class="container ">
+    <div class="border p-4 pb-5 rounded-sm">
     <div>
         <h2>Personal Information</h2>
     </div>
 
     <hr>
-    <div class="text-italic container">
-        <div class="container ml-5 mr-5">
+    <div class="">
+        <form action="#" method="post" class="">
+            <div class="border w-25 p-2 text-center right-align bg-lightgray mt-4 rounded-sm">
+                <p class="">
+                    <span class="bold-font">NOTE:</span> All information entered is protected by our privacy policy.
+                    Profile information can only be viewed by others with your permission.
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="fname" class=" control-label bold-font">First Name
+                </label>
+                <input class="form-control w-70" type="text" name="fname" id="fname">
 
-        </div>
+            </div>
+            <div class="form-group">
+                <label for="lname" class="control-label bold-font">Last Name
+                </label>
+                <input class="form-control w-70" type="text" name="lname" id="lname">
+            </div>
+            <div class="form-group">
+                <label for="age" class="control-label bold-font">Age
+                </label>
+                <input class="form-control w-70" type="text" name="age" id="age">
+            </div>
+            <label class="control-label bold-font">Gender</label>
+                <div class="form-group form-inline">
+                    <label><input type="radio" name="gender" id="male" value="male"> Male</label>
+                    <label><input type="radio" name="gender" id="female" value="female"> Female</label>
+                </div>
+
+            <div class="form-group">
+                <label for="phone" class="control-label bold-font">Phone Number
+                </label>
+                <input class="form-control w-70" type="text" name="phone" id="phone">
+            </div>
+            <div class="mb-4">
+                <input class="btn btn-info align-right " type="submit" value="Next>">
+            </div>
+        </form>
     </div>
-    <hr>
-    <div class="text-center">
-        <button type="button" class="btn btn-info">Get Started!</button>
     </div>
-
-
 </main>
 </body>
 </html>
