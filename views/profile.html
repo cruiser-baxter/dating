@@ -1,57 +1,61 @@
 <!--
 Author: Cruiser Baxter
 Date: 09-May-2021
-File: profile.html
-Description: profile page view for dating website.
+File: info.html
+Description: info page view for dating website.
 -->
 
 <include href="views/header.html"/>
-<main class="container">
-    <div>
-        <p class="">
-            <img src="images/home.jpg" class="img-thumbnail round-corners img-fluid align-right">
-        <h1 class="text-center">Millennial Connection</h1>
-        <h4 class="text-center">Welcome to a safer, better, online dating experience tailored to millennials</h4>
-        Welcome to Millennial Connection! A modern dating site for millennials,
-        a generation that still remembers what the sound and tedium of dial-up modems.
-        Many millennials are not fund of the many fast-paced, high-risk, casual dating services that are so popular
-        today.
-        For for the millions of millennials who grew up on the early internet and still feel that the internet is a part
-        of
-        their daily lives,
-        but do not fancy services like Tinder, Millennial Connection is an amazing place to meet other like-minded
-        people of
-        there generation!
-        Without the risk and fast-paced lifestyle of casual "hookup" services. Millennial Connections is a safe, secure,
-        and
-        fun dating site.
-        Here at Millennial Connection, every member is rigorously vetted, including a federal and all states background
-        check.
-        </p>
-    </div>
+<main class="container ">
+    <div class="border p-4 pb-5 rounded-sm">
+        <div>
+            <h2>Personal Information</h2>
+        </div>
 
-    <h4 class="text-center">Check out what our members have to say about out unique service!</h4>
-    <hr>
-    <div class="text-italic container">
-        <div class="container ml-5 mr-5">
-            <p class="">
-                "I met my lifetime partner after only a few months on Millennial Connection!"
-            </p>
-            <p>"I am so grateful that I found Millennial connect! I met the love of my life through their service and
-                now I cannot imagine life without my new soul mate"
-            </p>
-            <p>"After trying everything else out there and almost giving up on finding lifetime love, I found Millennial
-                Connect and
-                now I truly know what real lifetime love feels like!"
-            </p>
+        <hr>
+        <div class="">
+            <form action="#" method="post" class="">
+                <div class="border w-25 p-2 text-center right-align bg-lightgray mt-4 rounded-sm">
+                    <div class="form-group">
+                        <label >Example textarea
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </label>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fname" class=" control-label bold-font">First Name
+                    </label>
+                    <input class="form-control w-70" type="text" name="fname" id="fname">
+
+                </div>
+                <div class="form-group">
+                    <label for="lname" class="control-label bold-font">Last Name
+                    </label>
+                    <input class="form-control w-70" type="text" name="lname" id="lname">
+                </div>
+                <div class="form-group">
+                    <label for="age" class="control-label bold-font">Age
+                    </label>
+                    <input class="form-control w-70" type="text" name="age" id="age">
+                </div>
+                <label class="control-label bold-font">Gender</label>
+                <div class="form-group form-inline">
+                    <label><input type="radio" name="gender" id="male" value="male"> Male</label>
+                    <label><input type="radio" name="gender" id="female" value="female"> Female</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="control-label bold-font">Phone Number
+                    </label>
+                    <input class="form-control w-70" type="text" name="phone" id="phone">
+                </div>
+                <div class="mb-4">
+                    <input class="btn btn-info align-right " type="submit" value="Next>">
+                </div>
+            </form>
         </div>
     </div>
-    <hr>
-    <div class="text-center">
-        <button type="button" class="btn btn-info">Get Started!</button>
-    </div>
-
-
 </main>
 </body>
 </html>
