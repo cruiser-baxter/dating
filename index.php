@@ -41,27 +41,40 @@ $f3->route('GET|POST /info', function (){
 
 // profile view
 $f3->route('GET|POST /profile', function (){
-    echo "<h4></h4>";
-    echo "<h4></h4>";
-    echo "<h4></h4>";
-    echo "<h4></h4>";
-    echo "<h4></h4>";
 
     // if form submitted then store data in session array
     // then send user to the next order form
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        $_SESSION['fname'] = $_POST['fname'];
-        $_SESSION['lname'] = $_POST['lname'];
-        $_SESSION['age'] = $_POST['age'];
-        $_SESSION['phone'] = $_POST['phone'];
-        $_SESSION['gender'] = $_POST['gender'];
+        $_SESSION['textarea'] = $_POST['textarea'];
+        $_SESSION['state'] = $_POST['state'];
+        $_SESSION['seekinggender'] = $_POST['seekinggender'];
+        $_SESSION['email'] = $_POST['email'];
         header('location: interests');
     }
 
     // instantiate a view object
     $view = new Template();
     echo $view->render('views/profile.html');
+});
+
+// profile view
+$f3->route('GET|POST /interests', function (){
+
+    // if form submitted then store data in session array
+    // then send user to the next order form
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        $_SESSION['textarea'] = $_POST['textarea'];
+        $_SESSION['state'] = $_POST['state'];
+        $_SESSION['seekinggender'] = $_POST['seekinggender'];
+        $_SESSION['email'] = $_POST['email'];
+        header('location: summary');
+    }
+
+    // instantiate a view object
+    $view = new Template();
+    echo $view->render('views/interests.html');
 });
 
 // run Fat-Free

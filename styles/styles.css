@@ -31,3 +31,7 @@ input {
 .rounded-sm {
     border-radius: 10px;
 }
+
+.ml-3 {
+    margin-left: 2em;
+}

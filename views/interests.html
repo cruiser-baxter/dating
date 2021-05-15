@@ -1,57 +1,50 @@
-<!--
+]<!--
 Author: Cruiser Baxter
 Date: 09-May-2021
-File: interests.html
-Description: interests page view for dating website.
+File: info.html
+Description: info page view for dating website.
 -->
 
 <include href="views/header.html"/>
-<main class="container">
-    <div>
-        <p class="">
-            <img src="images/home.jpg" class="img-thumbnail round-corners img-fluid align-right">
-        <h1 class="text-center">Millennial Connection</h1>
-        <h4 class="text-center">Welcome to a safer, better, online dating experience tailored to millennials</h4>
-        Welcome to Millennial Connection! A modern dating site for millennials,
-        a generation that still remembers what the sound and tedium of dial-up modems.
-        Many millennials are not fund of the many fast-paced, high-risk, casual dating services that are so popular
-        today.
-        For for the millions of millennials who grew up on the early internet and still feel that the internet is a part
-        of
-        their daily lives,
-        but do not fancy services like Tinder, Millennial Connection is an amazing place to meet other like-minded
-        people of
-        there generation!
-        Without the risk and fast-paced lifestyle of casual "hookup" services. Millennial Connections is a safe, secure,
-        and
-        fun dating site.
-        Here at Millennial Connection, every member is rigorously vetted, including a federal and all states background
-        check.
-        </p>
-    </div>
+<main class="container ">
+    <div class="border p-4 pb-5 rounded-sm">
+        <div>
+            <h2>Profile</h2>
+        </div>
 
-    <h4 class="text-center">Check out what our members have to say about out unique service!</h4>
-    <hr>
-    <div class="text-italic container">
-        <div class="container ml-5 mr-5">
-            <p class="">
-                "I met my lifetime partner after only a few months on Millennial Connection!"
-            </p>
-            <p>"I am so grateful that I found Millennial connect! I met the love of my life through their service and
-                now I cannot imagine life without my new soul mate"
-            </p>
-            <p>"After trying everything else out there and almost giving up on finding lifetime love, I found Millennial
-                Connect and
-                now I truly know what real lifetime love feels like!"
-            </p>
+        <hr>
+        <div class="">
+            <form action="#" method="post" class="">
+                <div class="form-group w-50 right-align rounded-sm">
+                    <label class="ml-3 bold-font">Biography
+                        <textarea class="form-control" id="textarea" rows="5" cols="70"></textarea>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class=" control-label bold-font">Email
+                    </label>
+                    <input class="form-control w-50" type="text" name="email" id="email">
+
+                </div>
+                <div class="form-group">
+                    <label for="state" class="control-label bold-font">State
+                    </label>
+                    <input class="form-control w-50" type="text" name="state" id="state">
+                </div>
+
+                <label class="control-label bold-font">Seeking</label>
+                <div class="form-group form-inline">
+                    <label><input type="radio" name="seekinggender" id="male" value="male"> Male</label>
+                    <label><input type="radio" name="seekinggender" id="female" value="female"> Female</label>
+                </div>
+
+                <div class="mb-4">
+                    <input class="btn btn-info align-right " type="submit" value="Next>">
+                </div>
+            </form>
         </div>
     </div>
-    <hr>
-    <div class="text-center">
-        <button type="button" class="btn btn-info">Get Started!</button>
-    </div>
-
-
 </main>
 </body>
 </html>

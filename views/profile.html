@@ -9,47 +9,36 @@ Description: info page view for dating website.
 <main class="container ">
     <div class="border p-4 pb-5 rounded-sm">
         <div>
-            <h2>Personal Information</h2>
+            <h2>Profile</h2>
         </div>
 
         <hr>
         <div class="">
             <form action="#" method="post" class="">
-                <div class="border w-25 p-2 text-center right-align bg-lightgray mt-4 rounded-sm">
-                    <div class="form-group">
-                        <label >Example textarea
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <div class="form-group w-50 right-align rounded-sm">
+                        <label class="ml-3 bold-font">Biography
+                            <textarea class="form-control" id="textarea" rows="5" cols="70"></textarea>
                         </label>
+                </div>
 
-                    </div>
-                </div>
                 <div class="form-group">
-                    <label for="fname" class=" control-label bold-font">First Name
+                    <label for="email" class=" control-label bold-font">Email
                     </label>
-                    <input class="form-control w-70" type="text" name="fname" id="fname">
+                    <input class="form-control w-50" type="text" name="email" id="email">
 
                 </div>
                 <div class="form-group">
-                    <label for="lname" class="control-label bold-font">Last Name
+                    <label for="state" class="control-label bold-font">State
                     </label>
-                    <input class="form-control w-70" type="text" name="lname" id="lname">
+                    <input class="form-control w-50" type="text" name="state" id="state">
                 </div>
-                <div class="form-group">
-                    <label for="age" class="control-label bold-font">Age
-                    </label>
-                    <input class="form-control w-70" type="text" name="age" id="age">
-                </div>
-                <label class="control-label bold-font">Gender</label>
+
+                <label class="control-label bold-font">Seeking</label>
                 <div class="form-group form-inline">
-                    <label><input type="radio" name="gender" id="male" value="male"> Male</label>
-                    <label><input type="radio" name="gender" id="female" value="female"> Female</label>
+                    <label><input type="radio" name="seekinggender" id="male" value="male"> Male</label>
+                    <label><input type="radio" name="seekinggender" id="female" value="female"> Female</label>
                 </div>
 
-                <div class="form-group">
-                    <label for="phone" class="control-label bold-font">Phone Number
-                    </label>
-                    <input class="form-control w-70" type="text" name="phone" id="phone">
-                </div>
                 <div class="mb-4">
                     <input class="btn btn-info align-right " type="submit" value="Next>">
                 </div>
