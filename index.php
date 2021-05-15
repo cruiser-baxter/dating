@@ -58,7 +58,7 @@ $f3->route('GET|POST /profile', function (){
     echo $view->render('views/profile.html');
 });
 
-// profile view
+// interests view
 $f3->route('GET|POST /interests', function (){
 
     // if form submitted then store data in session array
@@ -75,6 +75,25 @@ $f3->route('GET|POST /interests', function (){
     // instantiate a view object
     $view = new Template();
     echo $view->render('views/interests.html');
+});
+
+// summary view
+$f3->route('GET|POST /summary', function (){
+
+//    // if form submitted then store data in session array
+//    // then send user to the next order form
+//    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//
+//        $_SESSION['textarea'] = $_POST['textarea'];
+//        $_SESSION['state'] = $_POST['state'];
+//        $_SESSION['seekinggender'] = $_POST['seekinggender'];
+//        $_SESSION['email'] = $_POST['email'];
+//        header('location: summary');
+//    }
+
+    // instantiate a view object
+    $view = new Template();
+    echo $view->render('views/summary.html');
 });
 
 // run Fat-Free

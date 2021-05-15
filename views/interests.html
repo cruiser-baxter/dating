@@ -9,34 +9,94 @@ Description: info page view for dating website.
 <main class="container ">
     <div class="border p-4 pb-5 rounded-sm">
         <div>
-            <h2>Profile</h2>
+            <h2>Interests</h2>
         </div>
 
         <hr>
         <div class="">
-            <form action="#" method="post" class="">
-                <div class="form-group w-50 right-align rounded-sm">
-                    <label class="ml-3 bold-font">Biography
-                        <textarea class="form-control" id="textarea" rows="5" cols="70"></textarea>
-                    </label>
+            <form action="#" method="post" class="form-inline">
+
+                <!-- get interests -->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label bold-font">In-door Interests</label>
+                    <div class="row-cols-5 p-3">
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="ketchup"> TV</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="mustard"> Puzzles</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="sriracha"> Movies</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="ketchup"> Reading</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="mustard"> Cooking</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="sriracha"> Playing cards</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="sriracha"> Board games</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="sriracha"> Video games</label>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="email" class=" control-label bold-font">Email
-                    </label>
-                    <input class="form-control w-50" type="text" name="email" id="email">
-
-                </div>
-                <div class="form-group">
-                    <label for="state" class="control-label bold-font">State
-                    </label>
-                    <input class="form-control w-50" type="text" name="state" id="state">
-                </div>
-
-                <label class="control-label bold-font">Seeking</label>
-                <div class="form-group form-inline">
-                    <label><input type="radio" name="seekinggender" id="male" value="male"> Male</label>
-                    <label><input type="radio" name="seekinggender" id="female" value="female"> Female</label>
+                    <label class="col-sm-2 control-label bold-font">Out-door Interests</label>
+                    <div class="row-cols-5 p-3">
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="ketchup"> Hiking</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="mustard"> Walking</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="sriracha"> Biking</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="ketchup"> Climbing</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="mustard"> Swimming</label>
+                        </div>
+                        <div class="form-check form-check-inline col">
+                            <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                                                                   name="outdoor[]"
+                                                                   value="sriracha"> Collecting</label>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="mb-4">
@@ -45,6 +105,8 @@ Description: info page view for dating website.
             </form>
         </div>
     </div>
+
+
 </main>
 </body>
 </html>
