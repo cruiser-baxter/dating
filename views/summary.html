@@ -6,49 +6,51 @@ Description: summary page view for dating website.
 -->
 
 <include href="views/header.html"/>
-<main class="container">
-    <div>
-        <p class="">
-            <img src="images/home.jpg" class="img-thumbnail round-corners img-fluid align-right">
-        <h1 class="text-center">Millennial Connection</h1>
-        <h4 class="text-center">Welcome to a safer, better, online dating experience tailored to millennials</h4>
-        Welcome to Millennial Connection! A modern dating site for millennials,
-        a generation that still remembers what the sound and tedium of dial-up modems.
-        Many millennials are not fund of the many fast-paced, high-risk, casual dating services that are so popular
-        today.
-        For for the millions of millennials who grew up on the early internet and still feel that the internet is a part
-        of
-        their daily lives,
-        but do not fancy services like Tinder, Millennial Connection is an amazing place to meet other like-minded
-        people of
-        there generation!
-        Without the risk and fast-paced lifestyle of casual "hookup" services. Millennial Connections is a safe, secure,
-        and
-        fun dating site.
-        Here at Millennial Connection, every member is rigorously vetted, including a federal and all states background
-        check.
-        </p>
+<main class="container mt-4 ">
+    <div class="border rounded-sm p-4 pt-2 row">
+    <div class="w-50 p-4 col">
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <td class="p-3">Name: {{ @SESSION.fname  }} {{ @SESSION.lname  }}</td>
+            </tr>
+            <tr>
+                <td class="p-3">Gender: {{ @SESSION.gender  }}</td>
+            </tr>
+            <tr>
+                <td class="p-3">Age: {{ @SESSION.age  }}</td>
+            </tr>
+            <tr>
+                <td class="p-3">State: {{ @SESSION.state  }}</td>
+            </tr>
+            <tr>
+                <td class="p-3">Seeking: {{ @SESSION.seekinggender  }}</td>
+            </tr>
+            <tr>
+                <td class="p-3"> Interests: {{ @SESSION.indoor  }} {{ @SESSION.outdoor  }}</td>
+            </tr>
+            <tr>
+                <td class="p-3">Phone: {{ @SESSION.phone  }}</td>
+            </tr>
+            <tr>
+                <td class="p-3">Email: {{ @SESSION.email  }}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-
-    <h4 class="text-center">Check out what our members have to say about out unique service!</h4>
-    <hr>
-    <div class="text-italic container">
-        <div class="container ml-5 mr-5">
+        <div class="w-50 p-4 col">
+            <img src="images/profile.jpg" class="img-thumbnail round-corners profile-image img-fluid">
+            <h5 class="pt-4">Biography</h5>
             <p class="">
-                "I met my lifetime partner after only a few months on Millennial Connection!"
-            </p>
-            <p>"I am so grateful that I found Millennial connect! I met the love of my life through their service and
-                now I cannot imagine life without my new soul mate"
-            </p>
-            <p>"After trying everything else out there and almost giving up on finding lifetime love, I found Millennial
-                Connect and
-                now I truly know what real lifetime love feels like!"
+                {{ @SESSION.bio  }}
             </p>
         </div>
+    <div class="text-center row">
+        <div class="col">
+            <button type="button" class="btn btn-info">Contact Me!</button>
+        </div>
+
     </div>
-    <hr>
-    <div class="text-center">
-        <button type="button" class="btn btn-info">Get Started!</button>
     </div>
 
 
