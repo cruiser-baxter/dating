@@ -6,8 +6,8 @@ Description: summary page view for dating website.
 -->
 
 <include href="views/header.html"/>
-<main class="container mt-4 ">
-    <div class="border rounded-sm p-4 pt-2 row">
+<main class="container ">
+    <div class="border rounded-sm p-4 pt-2 row m-4">
     <div class="w-50 p-4 col">
         <table class="table table-bordered">
             <tbody>
@@ -39,7 +39,7 @@ Description: summary page view for dating website.
         </table>
     </div>
         <div class="w-50 p-4 col">
-            <img src="images/profile.jpg" class="img-thumbnail round-corners profile-image img-fluid">
+            <img alt="profile photo" src="images/profile.jpg" class="img-thumbnail round-corners profile-image img-fluid">
             <h5 class="pt-4">Biography</h5>
             <p class="">
                 {{ @SESSION.bio  }}
