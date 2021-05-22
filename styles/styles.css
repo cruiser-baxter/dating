@@ -35,3 +35,7 @@ input {
 .ml-3 {
     margin-left: 2em;
 }
+.err {
+    color: darkred;
+    padding-left: 1em;
+}

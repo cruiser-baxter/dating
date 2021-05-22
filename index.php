@@ -6,6 +6,8 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 require_once ('vendor/autoload.php');
+require_once ('model/validation.php');
+require_once ('model/data-layer.php');
 session_start();
 // instantiate Fat-Free
 $f3 = Base::instance();

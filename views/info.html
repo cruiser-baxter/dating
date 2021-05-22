@@ -25,12 +25,21 @@ Description: info page view for dating website.
                 <label for="fname" class=" control-label bold-font">First Name
                 </label>
                 <input class="form-control w-70" type="text" name="fname" id="fname">
+                <!-- display an error message if there is one -->
+                <check if="{{ isset(@errors['fname']) }}">
+                    <span class="err">{{ @errors['fname'] }}</span>
+                </check>
 
             </div>
             <div class="form-group">
                 <label for="lname" class="control-label bold-font">Last Name
                 </label>
                 <input class="form-control w-70" type="text" name="lname" id="lname">
+
+                <!-- display an error message if there is one -->
+                <check if="{{ isset(@errors['lname']) }}">
+                    <span class="err">{{ @errors['lname'] }}</span>
+                </check>
             </div>
             <div class="form-group">
                 <label for="age" class="control-label bold-font">Age

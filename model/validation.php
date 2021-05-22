@@ -27,13 +27,34 @@ class Validation
 
     }
 
-    static function validOutdoor(): bool
+    static function validOutdoor($interests): bool
     {
+        $validInterests = DataLayer::indoorInterests();
+
+        //Make sure each selected interest is valid
+        foreach ($interests as $userChoice) {
+            if (!in_array($userChoice, $validInterests)) {
+                return false;
+            }
+        }
+
+        //All choices are valid
+        return true;
 
     }
 
-    static function validIndoor(): bool
+    static function validIndoor($interests): bool
     {
+        $validInterests = DataLayer::outdoorInterests();
 
+        //Make sure each selected interest is valid
+        foreach ($interests as $userChoice) {
+            if (!in_array($userChoice, $validInterests)) {
+                return false;
+            }
+        }
+
+        //All choices are valid
+        return true;
     }
 }
