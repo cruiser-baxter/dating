@@ -66,11 +66,50 @@ $f3->route('GET|POST /interests', function (){
 
     // if form submitted then store data in session array
     // then send user to the next order form
+//    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//        $_SESSION['indoor'] = implode(", ", $_POST['indoor']);
+//        $_SESSION['outdoor'] = implode(", ", $_POST['outdoor']);
+//        header('location: summary');
+//    }
+
+    //==========================================================================
+    //Initialize variables for user input
+    $userIndoor = array();
+    $userOutdoor = array();
+
+    //If the form has been submitted, validate the data
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $_SESSION['indoor'] = implode(", ", $_POST['indoor']);
-        $_SESSION['outdoor'] = implode(", ", $_POST['outdoor']);
-        header('location: summary');
+        //var_dump($_POST);
+
+        //If interests are selected
+        if (!empty($_POST['indoor'])) {
+
+            //Get user input
+            $userIndoor = $_POST['indoor'];
+
+            //If interests are valid
+            if (Validation::validIndoor($userIndoor)) {
+                $_SESSION['signup']->setIndoor(implode(", ", $userIndoor));
+            }
+            else {
+                $this->_f3->set('errors["indoor"]', 'Invalid selection');
+            }
+        }
+
+        //If the error array is empty, redirect to summary page
+        if (empty($this->_f3->get('errors'))) {
+            header('location: summary');
+        }
     }
+
+    //var_dump($userIndoor);
+
+    //Get the condiments from the Model and send them to the View
+    $this->_f3->set('indoors', DataLayer::indoorInterests());
+
+    //Add the user data to the hive
+    $this->_f3->set('userConds', $userIndoor);
+    //==========================================================================
 
     // instantiate a view object
     $view = new Template();
