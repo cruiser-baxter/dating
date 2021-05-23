@@ -9,5 +9,8 @@
   "require": {
     "bcosca/fatfree-core": "dev-master"
   },
-  "description": "default composer.json for dating website assignment"
+  "description": "default composer.json for dating website assignment",
+  "autoload": {
+    "classmap": ["model/", "controller/"]
+  }
 }
