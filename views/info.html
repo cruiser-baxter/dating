@@ -45,6 +45,10 @@ Description: info page view for dating website.
                 <label for="age" class="control-label bold-font">Age
                 </label>
                 <input class="form-control w-70" type="text" name="age" id="age">
+                <!-- display an error message if there is one -->
+                <check if="{{ isset(@errors['age']) }}">
+                    <span class="err">{{ @errors['age'] }}</span>
+                </check>
             </div>
             <label class="control-label bold-font">Gender</label>
                 <div class="form-group form-inline">
@@ -56,6 +60,10 @@ Description: info page view for dating website.
                 <label for="phone" class="control-label bold-font">Phone Number
                 </label>
                 <input class="form-control w-70" type="text" name="phone" id="phone">
+                <!-- display an error message if there is one -->
+                <check if="{{ isset(@errors['phone']) }}">
+                    <span class="err">{{ @errors['phone'] }}</span>
+                </check>
             </div>
             <div class="mb-4">
                 <input class="btn btn-info align-right " type="submit" value="Next>">

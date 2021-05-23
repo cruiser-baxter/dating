@@ -17,19 +17,26 @@ class Validation
 
     }
 
-    static function validPhone() : bool
+    static function validPhone($phone) : bool
     {
+        return is_numeric($phone);
 
     }
 
-    static function validEmail(): bool
+    static function validEmail($email): bool
     {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return true;
+        }
+
+        return false;
+
 
     }
 
     static function validOutdoor($interests): bool
     {
-        $validInterests = DataLayer::indoorInterests();
+        $validInterests = DataLayer::outdoorInterests();
 
         //Make sure each selected interest is valid
         foreach ($interests as $userChoice) {
@@ -45,7 +52,7 @@ class Validation
 
     static function validIndoor($interests): bool
     {
-        $validInterests = DataLayer::outdoorInterests();
+        $validInterests = DataLayer::indoorInterests();
 
         //Make sure each selected interest is valid
         foreach ($interests as $userChoice) {

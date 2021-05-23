@@ -24,7 +24,7 @@ Description: info page view for dating website.
                                 <label class="form-check-label"><input class="form-check-input" type="checkbox"
                                                                        name="indoor[]"
                                                                        value="{{ @indoor }}">
-                                    <check if="{{ in_array(@indoor, @userOutdoor) }}">
+                                    <check if="{{ in_array(@indoor, @userIndoors) }}">
                                         checked="checked"
                                     </check>
                                     {{ @indoor }}</label>
@@ -45,10 +45,10 @@ Description: info page view for dating website.
                                 <label class="form-check-label"><input class="form-check-input" type="checkbox"
                                                                        name="outdoor[]"
                                                                        value="{{ @outdoor }}">
-                                    <check if="{{ in_array(@outdoor, @userIndoor) }}">
+                                    <check if="{{ in_array(@outdoor, @userOutdoors) }}">
                                         checked="checked"
                                     </check>
-                                    {{ @indoor }}</label>
+                                    {{ @outdoor }}</label>
                             </div>
                         </repeat>
 
