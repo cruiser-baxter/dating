@@ -28,7 +28,7 @@ class Controller
             $lname = $_POST['lname'];
             $age = $_POST['age'];
             $phone = $_POST['phone'];
-            $gender = $_POST['gender'];
+            $_SESSION['gender'] = $_POST['gender'];
 
             // validate first name
             if (Validation::validName($fname)) {
@@ -145,8 +145,8 @@ class Controller
                 $userOutdoor = $_POST['outdoor'];
 
                 //If interests are valid
-                if (Validation::validIndoor($userOutdoor)) {
-                    $_SESSION['indoor'] = implode(", ", $userOutdoor);
+                if (Validation::validOutdoor($userOutdoor)) {
+                    $_SESSION['outdoor'] = implode(", ", $userOutdoor);
                 }
                 else {
                     $this->_f3->set('errors["outdoor"]', 'Invalid selection');

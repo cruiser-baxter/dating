@@ -18,6 +18,7 @@ Description: info page view for dating website.
                 <!-- get interests -->
                 <div class="form-group">
                     <label class="col-sm-2 control-label bold-font">In-door Interests</label>
+                    <span class="text-secondary font-weight-normal">(Optional)</span>
                     <div class="row-cols-5 p-3">
                             <repeat group="{{ @indoors }}" value="{{ @indoor }}">
                                 <div class="form-check form-check-inline col">
@@ -39,6 +40,7 @@ Description: info page view for dating website.
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label bold-font">Out-door Interests</label>
+                    <span class="text-secondary font-weight-normal">(Optional)</span>
                     <div class="row-cols-5 p-3">
                         <repeat group="{{ @outdoors }}" value="{{ @outdoor }}">
                             <div class="form-check form-check-inline col">

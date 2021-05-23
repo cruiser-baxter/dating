@@ -22,7 +22,7 @@ Description: info page view for dating website.
                 </p>
             </div>
             <div class="form-group">
-                <label for="fname" class=" control-label bold-font">First Name
+                <label for="fname" class=" control-label bold-font">First Name*
                 </label>
                 <input class="form-control w-70" type="text" name="fname" id="fname">
                 <!-- display an error message if there is one -->
@@ -32,7 +32,7 @@ Description: info page view for dating website.
 
             </div>
             <div class="form-group">
-                <label for="lname" class="control-label bold-font">Last Name
+                <label for="lname" class="control-label bold-font">Last Name*
                 </label>
                 <input class="form-control w-70" type="text" name="lname" id="lname">
 
@@ -42,8 +42,10 @@ Description: info page view for dating website.
                 </check>
             </div>
             <div class="form-group">
-                <label for="age" class="control-label bold-font">Age
+                <label for="age" class="control-label bold-font">Age*
                 </label>
+                <span class="text-secondary font-weight-normal">Numbers only.
+                    Age must be from 18 to 118</span>
                 <input class="form-control w-70" type="text" name="age" id="age">
                 <!-- display an error message if there is one -->
                 <check if="{{ isset(@errors['age']) }}">
@@ -51,14 +53,16 @@ Description: info page view for dating website.
                 </check>
             </div>
             <label class="control-label bold-font">Gender</label>
+            <span class="text-secondary font-weight-normal">(Optional)</span>
                 <div class="form-group form-inline">
                     <label><input type="radio" name="gender" id="male" value="male"> Male</label>
                     <label><input type="radio" name="gender" id="female" value="female"> Female</label>
                 </div>
 
             <div class="form-group">
-                <label for="phone" class="control-label bold-font">Phone Number
+                <label for="phone" class="control-label bold-font">Phone Number*
                 </label>
+                <span class="text-secondary font-weight-normal">Numbers only, no spaces. Example: 7572555555</span>
                 <input class="form-control w-70" type="text" name="phone" id="phone">
                 <!-- display an error message if there is one -->
                 <check if="{{ isset(@errors['phone']) }}">
