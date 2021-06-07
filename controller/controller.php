@@ -23,16 +23,24 @@ class Controller
         // if form submitted then validate data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+            // instantiate a new member or premium member object
+            if (isset($_POST['premium'])) {
+                $member = new PremiumMember();
+            } else {
+                $member = new Member();
+            }
+
             // get user data
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
             $age = $_POST['age'];
             $phone = $_POST['phone'];
-            $_SESSION['gender'] = $_POST['gender'];
+            $member->setGender($_POST['gender']);
+
 
             // validate first name
             if (Validation::validName($fname)) {
-                $_SESSION['fname'] = $_POST['fname'];
+                $member->setFname($_POST['fname']);
             }
             else {
                 $this->_f3->set('errors["fname"]', 'First name may only 
@@ -41,7 +49,7 @@ class Controller
 
             // validate last name
             if (Validation::validName($lname)) {
-                $_SESSION['lname'] = $_POST['lname'];
+                $member->setLname($_POST['lname']);
             }
             else {
                 $this->_f3->set('errors["lname"]', 'Last name may only 
@@ -50,7 +58,7 @@ class Controller
 
             // validate age
             if (Validation::validAge($age)) {
-                $_SESSION['age'] = $_POST['age'];
+                $member->setAge($_POST['age']);
             }
             else {
                 $this->_f3->set('errors["age"]', 'Age must be from 18 to 118 
@@ -59,15 +67,17 @@ class Controller
 
             // validate phone
             if (Validation::validPhone($phone)) {
-                $_SESSION['phone'] = $_POST['phone'];
+                $member->setPhone($_POST['phone']);
             }
             else {
                 $this->_f3->set('errors["phone"]', 'Phone number must only contain 
                 numbers without spaces and cannot be blank. Example: 7572555555');
             }
 
-            //If there are no errors, redirect to order2 route
+            //If there are no errors, save member object to session
+            // then redirect to order2 route
             if (empty($this->_f3->get('errors'))) {
+                $_SESSION['member'] = $member;
                 header('location: profile');
             }
 
@@ -80,14 +90,16 @@ class Controller
 
     function profile()
     {
-        // if form submitted then store data in session array
+        // if form submitted then process data
         // then send user to the next order form
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+            // get member object from session
+            $member = $_SESSION['member'];
             $email = $_POST['email'];
             // validate first name
             if (Validation::validEmail($email)) {
-                $_SESSION['email'] = $_POST['email'];
+                $member->setEmail($_POST['email']);
             }
             else {
                 $this->_f3->set('errors["email"]', 'Invalid Email. 
@@ -96,13 +108,20 @@ class Controller
             }
 
             $bio = $_POST['textarea'];
-            $_SESSION['bio'] = $bio;
-            $_SESSION['state'] = $_POST['state'];
-            $_SESSION['seekinggender'] = $_POST['seekinggender'];
+            $member->setBio($bio);
+            $member->setState($_POST['state']);
+            $member->setSeeking($_POST['seekinggender']);
 
-            //If there are no errors, redirect to order2 route
+            //If there are no errors, store member object
+            //in session then route to interests if premium member
+            //or to summary if regular member
             if (empty($this->_f3->get('errors'))) {
-                header('location: interests');
+                $_SESSION['member'] = $member;
+                if ($member instanceof PremiumMember) {
+                    header('location: interests');
+                }  else {
+                    header('location: summary');
+                }
             }
         }
 
@@ -114,6 +133,9 @@ class Controller
 
     function interests()
     {
+
+        // get the member object from session
+        $member = $_SESSION['member'];
 
         //Initialize variables for user input
         $userIndoor = array();
@@ -131,7 +153,7 @@ class Controller
 
                 //If interests are valid
                 if (Validation::validIndoor($userIndoor)) {
-                    $_SESSION['indoor'] = implode(", ", $userIndoor);
+                    $member->setIndoorInterest($userIndoor);
                 }
                 else {
                     $this->_f3->set('errors["indoor"]', 'Invalid selection');
@@ -146,15 +168,17 @@ class Controller
 
                 //If interests are valid
                 if (Validation::validOutdoor($userOutdoor)) {
-                    $_SESSION['outdoor'] = implode(", ", $userOutdoor);
+                    $member->setOutdoorInterest($userOutdoor);
                 }
                 else {
                     $this->_f3->set('errors["outdoor"]', 'Invalid selection');
                 }
             }
 
-            //If the error array is empty, redirect to summary page
+            //If the error array is empty, store member object in session
+            //then redirect to summary page
             if (empty($this->_f3->get('errors'))) {
+                $_SESSION['member'] = $member;
                 header('location: summary');
             }
         }

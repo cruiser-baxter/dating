@@ -12,28 +12,31 @@ Description: summary page view for dating website.
         <table class="table table-bordered">
             <tbody>
             <tr>
-                <td class="p-3">Name: {{ @SESSION.fname  }} {{ @SESSION.lname  }}</td>
+                <td class="p-3">Name: {{ @SESSION.member->getFname()  }} {{ @SESSION.member->getLname()  }}</td>
             </tr>
             <tr>
-                <td class="p-3">Gender: {{ @SESSION.gender  }}</td>
+                <td class="p-3">Gender: {{ @SESSION.member->getGender()  }}</td>
             </tr>
             <tr>
-                <td class="p-3">Age: {{ @SESSION.age  }}</td>
+                <td class="p-3">Age: {{ @SESSION.member->getAge()  }}</td>
             </tr>
             <tr>
-                <td class="p-3">State: {{ @SESSION.state  }}</td>
+                <td class="p-3">State: {{ @SESSION.member->getState()  }}</td>
             </tr>
             <tr>
-                <td class="p-3">Seeking: {{ @SESSION.seekinggender  }}</td>
+                <td class="p-3">Seeking: {{ @SESSION.member->getSeeking()  }}</td>
+            </tr>
+            <check if="{{ @SESSION.member instanceof PremiumMember}}">
+            <tr>
+                <td class="p-3"> Interests: {{ @SESSION.member->getIndoorInterests()  }}
+                    {{ @SESSION.member->getOutdoorInterests()  }}</td>
+            </tr>
+            </check>
+            <tr>
+                <td class="p-3">Phone: {{ @SESSION.member->getPhone()  }}</td>
             </tr>
             <tr>
-                <td class="p-3"> Interests: {{ @SESSION.indoor  }} {{ @SESSION.outdoor  }}</td>
-            </tr>
-            <tr>
-                <td class="p-3">Phone: {{ @SESSION.phone  }}</td>
-            </tr>
-            <tr>
-                <td class="p-3">Email: {{ @SESSION.email  }}</td>
+                <td class="p-3">Email: {{ @SESSION.member->getEmail()  }}</td>
             </tr>
             </tbody>
         </table>
@@ -42,7 +45,7 @@ Description: summary page view for dating website.
             <img alt="profile photo" src="images/profile.jpg" class="img-thumbnail round-corners profile-image img-fluid">
             <h5 class="pt-4">Biography</h5>
             <p class="">
-                {{ @SESSION.bio  }}
+                {{ @SESSION.member->getBio()  }}
             </p>
         </div>
     <div class="text-center row">

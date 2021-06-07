@@ -11,6 +11,6 @@
   },
   "description": "default composer.json for dating website assignment",
   "autoload": {
-    "classmap": ["model/", "controller/", "classes/"]
+    "classmap": ["classes/", "model/", "controller/"]
   }
 }
